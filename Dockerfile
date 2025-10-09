@@ -22,6 +22,9 @@ RUN apk add --no-cache --virtual .build-deps \
     && apk del .build-deps \
     && rm -rf /usr/src/*
 
+# Install bash completion
+RUN apk add --no-cache bash-completion
+
 # Install CLI
 ARG CLI_VERSION
 RUN curl -Lfso /usr/bin/ha https://github.com/home-assistant/cli/releases/download/${CLI_VERSION}/ha_${BUILD_ARCH} \
