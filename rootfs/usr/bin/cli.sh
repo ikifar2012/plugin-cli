@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# Generate bash completion for HA CLI
+if [ ! -f /etc/bash_completion.d/ha ]; then
+    ha completion bash > /etc/bash_completion.d/ha
+fi
+source /etc/bash_completion.d/ha
+
 ha banner || true
 
 # Run CLI
